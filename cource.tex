@@ -1,0 +1,383 @@
+\documentclass[14pt, letterpaper, twoside]{article}
+\usepackage[russian]{babel}%русский язык
+\usepackage{amsfonts}%красивые буковки
+\documentclass[UTF8]{ctexart}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows,arrows.meta}
+
+\title{Курсовая Работа}
+\author{Лытов Михаил Николаевич}
+\date{2022}
+\begin{document}
+
+\maketitle
+\section{Блок 1}
+\noindent №10
+
+Описать возможные порядки элементов групп и вычислить их экспоненты.
+
+
+\noindentв) ${\mathbb {Z}_8}^*$
+
+${\mathbb {Z}_8}^*$ = $\{ 1,3,5,7 \}$
+
+\begin{tabular}{ || c | c | c | c | c || }
+    \hline
+     * & 1 & 3 &5 & 7 \\ \hline
+    1& 1 & 3 &5 & 7 \\ \hline
+    3& 3 & 1 &7 & 5 \\ \hline
+    5& 5 & 7 &1 & 3 \\ \hline
+    7& 7 & 5 &3 & 1 \\ \hline
+\end{tabular}
+\par
+$ord(1) = 1$
+\par
+$ord(3) = 2$
+\par
+$ord(5) = 2$
+\par
+$ord(7) = 2$
+\par
+$exp$ ${\mathbb {Z}_8}^*$ = $\{ 1,3,5,7 \}$ $= [ord(1),ord(3),ord(5),ord(7)] = 2$
+\par
+\par
+\noindentж) $S_4$
+
+$(....) \Rightarrow ord = 4$
+\par
+$(...)(.)   \Rightarrow ord = 3$
+\par
+$(..)(..)   \Rightarrow ord = 2$
+\par
+$(.)(.)(.)(.)\Rightarrow ord = 1$
+
+expG = $[ord(g_1),ord(g_2),ord(g_3),ord(g_4)] = 12$
+\par
+задание №27(в).
+
+В циклической группе $G = <g>$ порядка $n∈ℕ$ найти все элементы $a∈G$, удовлетворяющие условию $a^k = e$, и все элементы порядка k
+
+n = 72, k = 36
+
+По определению G называется циклической, если её система образующих состоит из одного элемента $=>$ порядок любой цикл группы совпадает с порядком образующего элемента
+
+$g^k = e \Leftrightarrow ord a|k$ $a = g^t$,$t = \overline{0,n-1} $
+
+$(g^t)^k = g^t^k = e$ $\Leftrightarrow$ ord $g^t|k = e \Leftrightarrow$ ord$g^t|k \Leftrightarrow \left\frac{n}{(n,t)}\right|k \Leftrightarrow k = \left(\frac{n}{(n,t)}\right)= S$
+
+$a^36 = e \Leftrightarrow ord a|b$
+
+$g^{36t} = e \Leftrightarrow$ ord $g^t|b$
+
+$72|36t \Leftrightarrow 36t = 72S$
+
+$a^{36} = e \Leftrightarrow$ ord $a|36$
+
+$a\in G = <g> \Rightarrow  a= g^t, t\in \overline{0,n-1}$
+
+$(g^t)^{36} = g^{36t\in \overline{0,n-1}} = e \Leftrightarrow $ ord $g|36t$ $\Leftrightarrow$ $72|36t \Leftrightarrow 36t= 72S \Leftrightarrow t = 2S \Rightarrow $все подход. степени(т.е. знач. t будут кратны 2)
+
+$c =    \{0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,$
+$62,64,66,68,70\}$
+
+$g^c = \{e,g^2,g^4,g^6,g^8,g^{10},g^{12},g^{14},g^{16},g^{18},g^{20},g^{22},g^{24},g^{26},g^{28},g^{30},g^{32},g^{34},g^{36},g^{38},g^{40},g^{42},g^{44},g^{46},g^{48},$
+$g^{50},g^{52},g^{10}54,g^{56},g^{58},g^{60},g^{62},g^{64},g^{66},g^{68},g^{70}\}$ // найдем все элементы порядка k
+
+ord $g^t = 36 = \left(\frac{n}{(n,t)}\right) = \left(\frac{72}{(72,t)}\right)$
+
+$(72,2) = 2$ $(72,4) = 4$ $(72,4) = 4$ $(72,6) = 6$\par
+$(72,8) = 8$ $(72,10) = 2$ $(72,12) = 12$\par
+$(72,14) = 2$ $(72,16) = 8$ $(72,20) = 4$ $(72,22) = 2$\par  $(72,24) = 24$ $(72,26) = 2$ $(72,28) = 4$\par
+$(72,30) = 6$ $(72,32) = 8$ $(72,34) = 2$ $(72,36) = 36$\par $(72,38) = 2$ $(72,40) = 8$ $(72,42) = 6$\par
+$(72,44) = 4$ $(72,46) = 2$ $(72,48) = 24$ $(72,50) = 2$\par $(72,52) = 4$ $(72,54) = 18$ $(72,56) = 8$\par
+$(72,58) = 2$ $(72,60) = 12$ $(72,62) = 2$ $(72,64) = 8$\par $(72,66) = 6$ $(72,68) = 4$ $(72,70) = 2$
+
+\par
+\noindent№47
+\par
+Доказать, что в любой группе сопряжённые элементы, равно как и сопряжённые подгруппы, имеют одинаковые порядки.
+\par
+Порядки сопряжённых между собой элементов одинаковы. Действительно, если $a^k = e$ и $b = g^{-1}ag$, то 
+\par 
+$b^k = g^{-1}ag \cdot g^{-1}ag \cdot ... \cdot g^{-1}ag = e$.
+\par
+Обратно, если $b^m = e$, то и $a^m = e$, и значит, те наименьшие степени, в которых элементы a и b равны единице, одинаковы. 
+
+\par
+\noindent№50
+\par
+Доказать, что центр любой p-группы нетривиален, то есть отличен от подгруппа.
+
+$|G| = p^k,k \in \mathbb {N}$
+
+$G =    \cup [g_k]_ \approx$ //опр сопряженных элементов
+
+$\mathbb {Z}(G)=\{g \in G |     \forall h \in G, gh=hg \}$ // $[g]_\approx = \{x^{-1}gx|x \in G \}$
+
+$[g]_\approx = \{g\}$
+
+$|[g]_\approx| = |G : H_G(g)|$ | $|g|$
+
+$|G| = |Z(G)|+|G:N_G(g)| + |G:N_G(g_1)| + |G:N_G(g_2)| + |G:N_G(g_\tau)|$
+
+$|Z(G)| = t$
+
+$|Z(G)| > 1$
+
+$p^h = t + p^{k_1} + p^{k_2} + ... +  p^{k_\tau}$
+
+$t$ | $|G| \land t \neq 1 \implies t = p^1 : L \in \mathbb {N} \implies Z(G)$ нетривиален
+
+\noindent№51
+
+Док-ть, что любая группа порядка $p^2$ коммут.
+
+$Z(G) = G$
+
+$|Z(G)| = |G|$
+
+предположим, что G не абелева
+
+$|G| = p^2$
+
+$|Z(G)| = p$ - //ссылаемся на 50 задачу
+
+$|G:Z(G)| = \left(\frac{|G|}{|Z(G)|}\right) = \left(\frac{p^2}{p}\right) = p$
+
+$G/Z(G)$ - циклическая группа
+
+$G = \cup_a $ $a^kz$
+
+$x_1,x_2 \in G : x_1 = a^n z_1, z_1,z_2 \in z(G) $
+
+$x_2 = a^m z_2$
+
+$x_1*x_2=a^nz_1*a^mz_2=a^n*a^m*z_1*z_2 = a^{n+m}*z_1z_2=a^ma^nz_2z_1=a^mz_2*z^nz_1=x_2x_1$
+\section{Блок 2}
+\par
+\noindent№1
+\par
+Определить, является ли группа G разложимой.
+\par
+\noindent б)$(\mathbb {Q};+);$
+\par
+$(\mathbb {Q};+) = <\{\left(\frac{1}{p_i}\right),p_i$ - простое число,$i \in \mathbb {N}\}> \Rightarrow $ неразложима
+\par
+\noindent в)$S_4$
+выпишем нормальные делители : $\{ \varepsilon\},K_4,A_4,S_4$
+\par
+$\{ \varepsilon\},S_4 $ нам не подойдут
+\par
+проверим по условиям внутреннего прямого произведения
+\par
+1) $G = H_1 \cdot ... \cdot H_n$
+\par
+2) $H_i \cap (H_1 \cdot ... \cdot H_{i-1} \cdot H_{i+1} \cdot ... \cdot H_n) = \{ \varepsilon\}$
+\par
+3){ H_i \triangleleft G}
+\par
+$K_4\cap A_4 = K_4 \neq \{ \varepsilon\} \Rightarrow S_4 $не разложима
+
+
+\par
+\noindent№2
+\par
+Доказать, что мультипликативная группа поля вещественных чисел изоморфна внешнему прямому произведению мультипликативной группы вещественных положительных чисел и циклической группы 2-го порядка
+${\mathbb {R}}^* \cong \mathbb {R}_{>0} \otimes H_2$
+\par
+${\mathbb {R}}^* ={\mathbb {R}}_{>0} \cong \{0\}$
+\par
+\begin{equation*}
+ \begin{cases}
+  $H_2 = <-1>=\{-1,1\}$\\
+  ${\mathbb {R}}_{>0}$
+ \end{cases}
+\end{equation*}
+\par
+1) ${\mathbb {R}}^*$ = ${\mathbb {R}}_{>0} \cong H_2$
+\par
+2) ${\mathbb {R}}_{>0}\cap H_2 = \{ 1 \} = \{ \varepsilon \}$
+\par
+3)\par
+$R_{>0}     \triangleleft  {\mathbb {R}}^*$
+\par
+$H_2 \triangleleft {\mathbb {R}}^*$
+\par 
+3)$\Leftrightarrow {\mathbb {R}}^* = {\mathbb {R}}_{>0}     \times H_2 \Rightarrow {\mathbb {R}}^* \cong {\mathbb {R}}_{>0} \otimes H_2$ //       по теореме изоморфизм внешнего и внутреннего прямых произведений
+\noindent№22
+
+Док-ть, что всякая группа порядка 50 имеет собственный нормальный делитель
+
+$G=50=5^2*2=p^ns$; $(p,S)=1$
+
+3 Т.силова $S_p|$ $|G| \wedge s_p \equiv1(mod p)$ 
+
+выпишем делители 50 : $1,2,5,10,50$
+
+$S_2|50 \wedge S_2 \equiv1(mod 2)$
+
+$S_5|50 \wedge S_5 \equiv1(mod 5)$
+
+$S_2 = 25$  $S_5 = 1$
+
+И если мы посмотрим на задание 21, то от туда можно сделать вывод, что $S_5 \Leftrightarrow H_5     \triangleleft G$ 
+\par
+\noindent№20
+\par
+Показать, что в группе $A_4$ не существует подгруппа 6-го порядка
+\par
+В группе $A_4$(имеющие порядок 12) нет подгруппы порядка 6. Из теоремы о декременте и теоремы, которая гласит 
+\par
+Порядок цикла равен его длине. Порядок произвольной подстановки $g  \in S(\Omega)$ равен наименьшему общему кратному длин циклов в её разложении на независимые циклы.
+\par
+(теорема о декременте). Если подстановка $g \in S_n$ каким-либо способом представлена в виде произведения m циклов длин $l_1 + ... +l_m$ - m четно.
+\par
+следует, что любой элемент из $A_4\{\varepsilon\}$ имеют порядок 2 или 3. Если $G < S_4$ и $|G| = 6$, то $|G$  $    \backslash\{\varepsilon\}| = 5$. Множество $G\backslash\{\varepsilon\}$ не может состояль только из элементов порядка 2, так как $A_4$ содержит всего три таких элемента, и не может состоять только из элементов порядка 3, так как их количество в любой конечной группе честно. Следовательно, в П есть подстановки вида $g = (a,b)(c,d), \{a,b\} V \{c,d\} = \oslash$, и $h = (\alpha, \beta, \gamma)$. Остается заметить, что $<g,h> = A_4$
+
+
+  
+\noindent№25
+
+Определить, сколько различных силовский 2-подгрупп и 5-подгрупп существует в неабелевой группе порядка 20
+
+$|G| = 20 = 2^2 * 5^1$ $p^n*S$ $(p,S) = 1$
+
+первая теорема Силова $\exists|H| = p^n $ 
+
+$\exists    |H_2| = 4, |H_5| = 5$
+
+$S_p | |G|  \land S_p \equiv 1$ mod$p$ // 3 теорема Силова
+
+выпишем нормальные делители 20 $1,2,4,5,10,20$
+
+$S_2 |$ $|G|    \land S_2 \equiv 1$ mod$2$ $\Rightarrow S_2 = 5$
+
+$S_5 |$ $|G|    \land S_5 \equiv 1$ mod$5$ $\Rightarrow S_5 = 1$
+
+\section{Блок 3}
+\noindent№16
+
+Пусть $A\subset S_n$ - некоторое множество транспозиций степени $n\in \mathbb {N}$. По свойствам графа $Г_A$ описать структуру группы $G = <A>$ и определить, является ли множество A системой образующих или базисом группы.
+
+г) $A = \{ (1,9),(2,6),(3,5),(4,8),(5,6),(6,9),(7,9),(8,10),(10,2);$
+
+\begin{tikzpicture} [node distance = 1]
+        \begin{scope}
+        \node (zhunbei) [lingxing] at (5,5) {9};
+        \node (soil) [zhunbei] at (4,4){1};
+        \node (veg)  [zhunbei] at (6,4) {7};
+        \node (b1)  [zhunbei] at (5,3) {6};
+        \node (b2)  [b1] at (3,2) {2};
+        \node (b3)  [b1] at (7,2) {5};
+        \node (b4)  [b3] at (8,1) {3};
+        \node (b5)  [b2] at (2,1) {10};
+        \node (b6)  [b2] at (1,0) {8};
+        \node (b7)  [b2] at (0,-1) {4};
+        \end{scope}
+        \draw[arrow] (zhunbei.south)  --  (soil.north);
+        \draw[arrow] (zhunbei.south)  --  (veg.north);
+        \draw[arrow] (zhunbei.south)  --  (b1.north);
+        \draw[arrow] (b1.south)  --  (b3.north);
+        \draw[arrow] (b3.south)  --  (b4.north);
+        \draw[arrow] (b1.south)  --  (b2.north);
+        \draw[arrow] (b2.south)  --  (b5.north);
+        \draw[arrow] (b5.south)  --  (b6.north);
+        \draw[arrow] (b6.south)  --  (b7.north);
+    \end{tikzpicture}
+    
+    
+    
+По следствию из теоремы: Множество транспозиций A является системой образующих группы $S_n$ тогда и только тогда, когда граф $F_A$ будет связан.
+
+Следствие: множество транспозиций A является базисом группы $S_n$ тогда и только тогда, когда граф $Г_А$ является деревом. 
+
+з) $A = \{(1,2),(2,5),(2,9),(3,4),(3,8),(4,7),(5,6),(6,9),(7,8),(8,10)\}$
+
+
+\begin{tikzpicture} [node distance = 11]
+        \begin{scope}
+        \node (b1) [lingxing] at (5,8) {1};
+        \node (b2) [b1] at (8,7) {2};
+        \node (b3) [b1] at (8,3) {9};
+        \node (b4) [b3] at (4,2) {6};
+        \node (b5) [b3] at (5,4) {5};
+        \node (b6) [b1] at (12,8) {3};
+        \node (b7) [b6] at (12,6) {4};
+        \node (b8) [b7] at (12,4) {7};
+        \node (b9) [b1] at (15,6) {8};
+        \node (b10) [b8] at (18,2) {10};
+        
+        \end{scope}
+        \draw[arrow] (b1.south)  --  (b2.north);
+        \draw[arrow] (b2.south)  --  (b3.north);
+        \draw[arrow] (b2.south)  --  (b5.north);
+        \draw[arrow] (b5.south)  --  (b4.north);
+        \draw[arrow] (b3.south)  --  (b4.north);
+        \draw[arrow] (b6.south)  --  (b7.north);
+        \draw[arrow] (b7.south)  --  (b8.north);
+        \draw[arrow] (b8.south)  --  (b9.north);
+        \draw[arrow] (b9.south)  --  (b10.north);
+        \draw[arrow] (b6.south)  --  (b9.north);
+        %\draw[arrow] (b4.south) arc (0:90:1);
+\end{tikzpicture}
+
+
+Множество А не является система образующим, т.к граф не связанный
+
+
+\noindent№22
+
+Найти нормализатор подстановки $g   \in S_8$
+
+a) $g=(1567)(382)$
+
+Найдем её нормализатор, то есть все подстановки $x \in S_8$, для которых выполнено условие:
+
+$gx=xg  \Leftrightarrow x^{-1}gx=g$
+
+\begin{tabular}{ || c | c | c || }
+    \hline
+    № & 1567 & 382  \\ \hline
+    1 & 1567 & 382 \\ \hline
+    2 & 1567 & 823 \\ \hline
+    3 & 1567 &  238\\ \hline
+    4 & 5671 &  382\\ \hline
+    5 & 5671 &  823\\ \hline
+    6 & 5671 &  238\\ \hline
+    7 & 6715 &  382\\ \hline
+    8 & 6715 &  823\\ \hline
+    9 & 6715 &  238\\ \hline
+    10 & 7156 &  382\\ \hline
+    11 & 7156 &  238\\ \hline
+    12 & 7156 &  823\\ \hline
+    
+    
+\end{tabular}
+
+
+         К примеру, решением под № 9 является подстановка $(16)(57)(382)$
+
+
+\noindent№25(в)
+
+В группе $S_15$ найти число решений для каждого из уравнений $x^{-1}gx=h$ и $x^{-1}g_1x=h_1$. Указать число общих решений 
+
+$g=(13$ $5$ $7$ $9)$ $(2$ $4$ $6$ $8)$ $(11$ $13)$,
+
+h = (1 4 7 10 13)(2 5 8 11)(12 14),
+
+$g_1$ = (1 2 3)(4 5 6)(7 8 9)(10 11 12)(13 14 15),
+
+$h_1$ = (1 4 7)(2 10 13)(3 6 14)(5 8 11)(9 12 15).
+
+$|N_S(g)|=\prod\limits_{i=1}^{k}(k_i)!*L\limits_i^{k_i}=5*4*3=40$
+\par
+$|N_S(g)|=\prod\limits_{i=1}^{k}(k_i)!*L\limits_i^{k_i}=5!*3^5 =29160$
+
+
+\end{document}
+
